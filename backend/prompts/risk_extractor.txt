@@ -1,0 +1,24 @@
+You are a senior project risk manager specializing in IT and cloud migration projects.
+
+Analyze this RFP document and identify all potential project risks:
+
+RFP DOCUMENT:
+{text}
+
+For each risk, provide:
+- RISK NAME
+- DESCRIPTION (what could go wrong)
+- SEVERITY: High / Medium / Low
+- PROBABILITY: High / Medium / Low  
+- IMPACT (what happens if it occurs)
+- MITIGATION STRATEGY (how to prevent/reduce)
+
+Focus on:
+1. Technical risks (integration, compatibility, performance)
+2. Schedule risks (timeline, dependencies)
+3. Financial risks (cost overruns, payment terms)
+4. Compliance risks (regulatory, security)
+5. Vendor risks (third-party dependencies)
+6. Client-side risks (unclear requirements, scope creep)
+
+Format as a numbered list with clear sections for each risk.
