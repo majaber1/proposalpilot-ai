@@ -1,0 +1,97 @@
+REQUEST FOR PROPOSAL (RFP)
+Cloud Migration and Digital Transformation Initiative
+Reference: RFP-2026-CLOUD-001
+Issuing Authority: Ministry of Digital Transformation
+
+=================================================================
+SECTION 1: INTRODUCTION AND PURPOSE
+=================================================================
+
+The Ministry of Digital Transformation (MDT) is seeking proposals from qualified vendors to provide comprehensive cloud migration services for our existing on-premises infrastructure. This project involves migrating 47 applications, 3 data centers, and supporting infrastructure to a government-approved cloud environment.
+
+Project Timeline: 18 months
+Budget Range: SAR 5,000,000 - SAR 15,000,000
+Project Start: Q3 2026
+
+=================================================================
+SECTION 2: SCOPE OF WORK
+=================================================================
+
+2.1 CURRENT STATE ASSESSMENT
+- Inventory and assessment of 47 applications (12 mission-critical, 20 business-critical, 15 low-priority)
+- Current infrastructure: 120 physical servers, 400 VMs, 500TB storage
+- Legacy systems include: Oracle ERP (2008), COBOL mainframe applications, Windows Server 2008 R2
+
+2.2 MIGRATION SERVICES REQUIRED
+- Cloud readiness assessment for all applications
+- Application modernization for legacy systems
+- Data migration with zero data loss guarantee
+- Network connectivity and SD-WAN implementation
+- Security architecture design and implementation
+- Identity and Access Management (IAM) setup
+- Disaster Recovery (DR) design with RPO < 4 hours, RTO < 2 hours
+
+2.3 COMPLIANCE REQUIREMENTS
+- NCA ECC compliance (Saudi National Cybersecurity Authority)
+- PDPL compliance (Personal Data Protection Law)
+- ISO 27001 certification required
+- Data must remain within Kingdom of Saudi Arabia borders
+
+2.4 TECHNICAL REQUIREMENTS
+- Multi-cloud strategy (Primary: Government Cloud, Secondary: Commercial Cloud)
+- Zero downtime migration for mission-critical applications
+- 99.99% SLA for production systems
+- 24/7 NOC support during migration
+- Automated backup and recovery testing
+
+=================================================================
+SECTION 3: VENDOR QUALIFICATIONS
+=================================================================
+
+Required:
+- Minimum 5 years cloud migration experience
+- At least 3 government cloud migration references
+- Certified team: AWS/Azure/GCP architects (minimum 10)
+- Saudi Arabia presence required (local office)
+- CITC registration
+
+Preferred:
+- Experience with Saudi government entities
+- NCA-approved security team
+- Arabic language support capability
+
+=================================================================
+SECTION 4: PROPOSAL REQUIREMENTS
+=================================================================
+
+Vendors must submit:
+1. Technical proposal (max 50 pages)
+2. Financial proposal (separate sealed envelope)
+3. Company profile and references
+4. Team CVs and certifications
+5. Sample project plan
+6. Risk register
+7. SLA framework
+
+Submission Deadline: July 30, 2026
+Submission Address: MDT Procurement Office, Riyadh
+
+=================================================================
+SECTION 5: EVALUATION CRITERIA
+=================================================================
+
+- Technical approach: 40%
+- Team experience and qualifications: 25%
+- Financial proposal: 25%
+- References and case studies: 10%
+
+=================================================================
+SECTION 6: TERMS AND CONDITIONS
+=================================================================
+
+- Payment terms: 30% mobilization, 40% milestone-based, 30% completion
+- Warranty period: 12 months post go-live
+- Penalties: 0.5% per day for delays, max 10% of contract value
+- Governing law: Kingdom of Saudi Arabia
+
+For queries, contact: rfp@mdt.gov.sa | Tel: +966-11-XXX-XXXX
