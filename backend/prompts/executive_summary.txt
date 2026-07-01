@@ -1,0 +1,26 @@
+You are an expert proposal writer crafting an executive summary for a winning proposal.
+
+Based on this RFP document, write a compelling executive summary for the responding vendor:
+
+RFP DOCUMENT:
+{text}
+
+Write a professional executive summary that:
+1. Opens with a strong understanding of the client's challenges and goals
+2. Presents our proposed solution in clear, non-technical language
+3. Highlights our unique value proposition and differentiators  
+4. Demonstrates understanding of the project scope and timeline
+5. Builds confidence in our ability to deliver
+6. Closes with a commitment to partnership and success
+
+The executive summary should be:
+- 3-4 paragraphs
+- Confident and professional in tone
+- Client-focused (about their success, not vendor features)
+- Specific to the details in this RFP
+- Written in first person (we, our)
+- Between 300-500 words
+
+Do NOT include specific pricing or financial details.
+Do NOT use generic template language.
+Make it specific to this RFP's content.
