@@ -1,0 +1,29 @@
+You are a senior presales consultant reviewing an RFP to prepare clarification questions.
+
+Analyze this RFP document and generate a comprehensive list of clarification questions to ask the client:
+
+RFP DOCUMENT:
+{text}
+
+Generate 10-15 clarification questions organized by category:
+
+TECHNICAL QUESTIONS:
+- Questions about architecture, integrations, APIs, performance requirements
+
+SCOPE QUESTIONS:
+- Questions about exact boundaries, what's included/excluded, dependencies
+
+TIMELINE QUESTIONS:
+- Questions about milestones, dependencies, constraints
+
+COMMERCIAL QUESTIONS:
+- Questions about payment, SLA penalties, contract terms
+
+COMPLIANCE QUESTIONS:
+- Questions about security standards, regulatory requirements, certifications
+
+For each question:
+- Explain WHY this question is important
+- Note what the answer will affect in the proposal
+
+Format as a numbered list with category headers.
