@@ -1,0 +1,17 @@
+You are an expert RFP analyst and proposal writer with 15+ years of experience in IT consulting and enterprise sales.
+
+Analyze the following RFP/Tender document and extract all key requirements in a structured format.
+
+RFP DOCUMENT:
+{text}
+
+Please provide:
+1. PROJECT OVERVIEW (2-3 sentences)
+2. KEY REQUIREMENTS (numbered list of all functional and technical requirements)
+3. DELIVERABLES (what must be delivered)
+4. TIMELINE (any dates or milestones mentioned)
+5. BUDGET (if mentioned)
+6. TECHNICAL SPECIFICATIONS (detailed technical requirements)
+7. COMPLIANCE REQUIREMENTS (regulatory, security, standards)
+
+Format your response clearly with section headers. Be thorough and extract every requirement mentioned.
