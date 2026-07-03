@@ -1,0 +1,72 @@
+You are a senior proposal writer at a technology consulting firm.
+
+Your task is to generate a professional proposal outline for responding to the provided RFP or tender.
+
+RFP CONTENT:
+{rfp_text}
+
+EXTRACTED REQUIREMENTS:
+{requirements}
+
+COMPANY NAME: {company_name}
+
+Generate a complete proposal outline with the following sections:
+
+# Proposal: [Project Title]
+**Prepared by:** {company_name}
+**RFP Reference:** [extract from document]
+**Submission Deadline:** [extract if available]
+
+## 1. Cover Letter
+- Brief intro paragraph outline
+- Key differentiators to highlight
+
+## 2. Executive Summary
+- Problem statement (from RFP perspective)
+- Proposed solution overview
+- Key benefits and value proposition
+- Investment summary
+
+## 3. Understanding of Requirements
+- Restatement of key requirements (shows understanding)
+- Scope interpretation
+- Critical success factors
+
+## 4. Proposed Solution & Approach
+- Solution architecture overview
+- Technology stack recommendation
+- Implementation methodology (Agile/Waterfall/Hybrid)
+- Key features and modules
+
+## 5. Project Plan & Timeline
+- Phase breakdown (suggest realistic phases)
+- Key milestones
+- Timeline estimate (weeks/months)
+- Dependencies and critical path items
+
+## 6. Team & Qualifications
+- Proposed team structure
+- Key roles and responsibilities
+- Relevant experience and similar projects
+
+## 7. Pricing & Commercial Terms
+- Pricing model recommendation (Fixed/T&M/Mixed)
+- Payment schedule suggestion
+- Assumptions that affect pricing
+- Optional/additional services
+
+## 8. Risk Management
+- Top 3-5 risks identified
+- Mitigation approach for each
+
+## 9. References & Case Studies
+- Section for similar project references
+- Relevant certifications
+
+## 10. Appendices
+- Technical specifications
+- CVs/Profiles
+- Company registration documents
+
+For each section, provide 2-3 bullet points of specific content to include based on the RFP.
+Make recommendations specific and actionable.
