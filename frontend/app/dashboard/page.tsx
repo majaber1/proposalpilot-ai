@@ -74,7 +74,7 @@ export default function DashboardPage() {
       <div className="container mx-auto px-6 py-8">
         {/* AI Status Banner */}
         {aiStatus?.status === 'error' && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6" role="status" aria-live="polite">
             <p className="text-red-700 font-medium">⚠️ AI Service Offline</p>
             <p className="text-red-600 text-sm mt-1">
               Make sure Ollama is running: <code className="bg-red-100 px-1 rounded">ollama pull qwen2.5:7b-instruct</code>

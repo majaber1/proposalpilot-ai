@@ -77,7 +77,8 @@ export default function ProposalPage() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-white font-semibold text-lg">Proposal Outline</h2>
               <button onClick={() => generateContent('outline')} disabled={generating}
-                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                aria-label="Generate proposal outline" aria-live={generating ? 'polite' : undefined}>
                 {generating ? '🤖 Generating...' : '✨ Generate Outline'}
               </button>
             </div>

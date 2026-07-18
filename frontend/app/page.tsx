@@ -17,11 +17,13 @@ export default function LandingPage() {
         </p>
         <div className="flex justify-center gap-4">
           <Link href="/login"
-            className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+            className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+            aria-label="Start free demo">
             Start Free Demo
           </Link>
           <a href="#features"
-            className="border border-gray-200 text-gray-700 px-6 py-3 rounded-md font-semibold hover:bg-gray-50 transition">
+            className="border border-gray-200 text-gray-700 px-6 py-3 rounded-md font-semibold hover:bg-gray-50 transition"
+            aria-label="See how it works">
             See How It Works
           </a>
         </div>
