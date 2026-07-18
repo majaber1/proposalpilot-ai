@@ -95,19 +95,7 @@ function AnalysisContent() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-        <span className="font-bold text-lg">ProposalPilot AI — Analysis</span>
-        <div className="flex gap-4">
-          {analysis?.status === 'completed' && (
-            <button onClick={exportMarkdown} className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600">
-              📥 Export Markdown
-            </button>
-          )}
-          <Link href="/dashboard" className="text-blue-200 hover:text-white text-sm">← Dashboard</Link>
-        </div>
-      </nav>
-
+    <div>
       <div className="container mx-auto px-6 py-8">
         {!analysisId && !analysis && docId && (
           <div className="text-center py-12">

@@ -30,15 +30,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950">
-      <header className="border-b border-blue-900/30 bg-slate-900/60 backdrop-blur">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/dashboard" className="text-blue-400 hover:text-blue-300 text-sm">← Dashboard</Link>
-          <span className="text-white font-semibold">Settings</span>
-          <div className="w-24"></div>
-        </div>
-      </header>
-
+    <div>
       <main className="max-w-4xl mx-auto px-6 py-8 space-y-6">
 
         {/* System Health */}

@@ -69,21 +69,7 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <span className="font-bold text-lg">ProposalPilot AI</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link href="/upload" className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 text-sm">
-            + Upload RFP
-          </Link>
-          <button onClick={handleLogout} className="text-blue-200 hover:text-white text-sm">
-            Logout
-          </button>
-        </div>
-      </nav>
+    <div>
 
       <div className="container mx-auto px-6 py-8">
         {/* AI Status Banner */}
