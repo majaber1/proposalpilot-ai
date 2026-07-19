@@ -88,13 +88,7 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-        <span className="font-bold text-lg">ProposalPilot AI</span>
-        <Link href="/dashboard" className="text-blue-200 hover:text-white text-sm">← Dashboard</Link>
-      </nav>
-
+    <div>
       <div className="container mx-auto px-6 py-8 max-w-2xl">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Upload RFP Document</h1>
         <p className="text-gray-500 mb-8">Upload a PDF, DOCX, or TXT file to analyze with AI</p>
@@ -127,12 +121,13 @@ export default function UploadPage() {
               <div className="text-5xl mb-4">📤</div>
               <p className="text-lg font-medium text-gray-700">Drag & drop your RFP here</p>
               <p className="text-gray-500 text-sm mb-4">or click to browse</p>
-              <label className="cursor-pointer bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">
+              <label className="cursor-pointer bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition" aria-label="Choose file">
                 Choose File
                 <input
                   type="file"
                   accept=".pdf,.docx,.doc,.txt"
                   className="hidden"
+                  aria-label="RFP file input"
                   onChange={(e) => e.target.files?.[0] && handleFileSelect(e.target.files[0])}
                 />
               </label>

@@ -69,26 +69,12 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <span className="font-bold text-lg">ProposalPilot AI</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link href="/upload" className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 text-sm">
-            + Upload RFP
-          </Link>
-          <button onClick={handleLogout} className="text-blue-200 hover:text-white text-sm">
-            Logout
-          </button>
-        </div>
-      </nav>
+    <div>
 
       <div className="container mx-auto px-6 py-8">
         {/* AI Status Banner */}
         {aiStatus?.status === 'error' && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6" role="status" aria-live="polite">
             <p className="text-red-700 font-medium">⚠️ AI Service Offline</p>
             <p className="text-red-600 text-sm mt-1">
               Make sure Ollama is running: <code className="bg-red-100 px-1 rounded">ollama pull qwen2.5:7b-instruct</code>
@@ -99,7 +85,7 @@ export default function DashboardPage() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-6">
+            <div key={i} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className={`w-10 h-10 ${stat.color} rounded-lg flex items-center justify-center text-white text-xl mb-3`}>
                 {stat.icon}
               </div>
@@ -110,7 +96,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Recent Documents */}
-        <div className="bg-white rounded-xl shadow-sm">
+        <div className="bg-white rounded-xl shadow-md">
           <div className="px-6 py-4 border-b flex justify-between items-center">
             <h2 className="text-lg font-semibold text-gray-900">Recent Documents</h2>
             <Link href="/upload" className="text-blue-600 hover:underline text-sm">Upload New →</Link>

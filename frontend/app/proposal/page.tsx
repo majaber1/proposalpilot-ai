@@ -51,17 +51,7 @@ export default function ProposalPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950">
-      <header className="border-b border-blue-900/30 bg-slate-900/60 backdrop-blur">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/dashboard" className="text-blue-400 hover:text-blue-300 text-sm">← Dashboard</Link>
-          <span className="text-white font-semibold">Proposal Generator</span>
-          <button onClick={exportMarkdown} className="text-sm bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            📥 Export Markdown
-          </button>
-        </div>
-      </header>
-
+    <div>
       <main className="max-w-6xl mx-auto px-6 py-8">
         {data && (
           <div className="mb-6">
@@ -87,7 +77,8 @@ export default function ProposalPage() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-white font-semibold text-lg">Proposal Outline</h2>
               <button onClick={() => generateContent('outline')} disabled={generating}
-                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                aria-label="Generate proposal outline" aria-live={generating ? 'polite' : undefined}>
                 {generating ? '🤖 Generating...' : '✨ Generate Outline'}
               </button>
             </div>
