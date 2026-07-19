@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Sparkles, AlertCircle, ArrowLeft } from 'lucide-react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
@@ -41,66 +42,70 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-white font-bold text-2xl">PP</span>
-          </div>
-          <h1 className="text-2xl font-bold text-gray-900">ProposalPilot AI</h1>
-          <p className="text-gray-500 text-sm mt-1">Sign in to your account</p>
-        </div>
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 relative">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(79,70,229,0.35),rgba(255,255,255,0))]" />
 
-        {/* Demo credentials banner */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6">
-          <p className="text-blue-800 text-sm font-medium">🎉 Demo Mode</p>
-          <p className="text-blue-600 text-xs mt-1">
-            Email: admin@demo.com | Password: demo123
+      <div className="relative w-full max-w-md">
+        <div className="card p-8 animate-fade-in">
+          <div className="text-center mb-8">
+            <div className="w-14 h-14 bg-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-soft">
+              <span className="text-white font-bold text-xl">PP</span>
+            </div>
+            <h1 className="text-2xl font-bold text-slate-900">ProposalPilot AI</h1>
+            <p className="text-slate-500 text-sm mt-1">Sign in to your account</p>
+          </div>
+
+          <div className="bg-brand-50 border border-brand-100 rounded-lg p-3 mb-6 flex gap-2.5">
+            <Sparkles className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="text-brand-800 text-sm font-medium">Demo Mode</p>
+              <p className="text-brand-600 text-xs mt-0.5">Email: admin@demo.com &middot; Password: demo123</p>
+            </div>
+          </div>
+
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4 flex gap-2.5">
+              <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+              <p className="text-red-600 text-sm">{error}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="input-field"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1.5">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="input-field"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full py-3 text-base"
+            >
+              {loading ? 'Signing in...' : 'Sign In'}
+            </button>
+          </form>
+
+          <p className="text-center text-slate-500 text-sm mt-6">
+            <Link href="/" className="text-brand-600 hover:text-brand-700 font-medium inline-flex items-center gap-1">
+              <ArrowLeft className="w-3.5 h-3.5" /> Back to home
+            </Link>
           </p>
         </div>
-
-        {/* Error message */}
-        {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
-            <p className="text-red-600 text-sm">{error}</p>
-          </div>
-        )}
-
-        {/* Login form */}
-        <form onSubmit={handleLogin} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-900 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed transition"
-          >
-            {loading ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
-
-        <p className="text-center text-gray-500 text-sm mt-6">
-          <Link href="/" className="text-blue-600 hover:underline">← Back to home</Link>
-        </p>
       </div>
     </div>
   );

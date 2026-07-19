@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { FileText, CheckCircle2, Cog, Bot, Plus, LogOut, Settings as SettingsIcon, AlertTriangle, ArrowRight } from 'lucide-react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
@@ -62,89 +63,103 @@ export default function DashboardPage() {
   };
 
   const stats = [
-    { label: 'Total Documents', value: documents.length, icon: '📄', color: 'bg-blue-500' },
-    { label: 'Analyzed', value: documents.filter(d => d.status === 'analyzed').length, icon: '✅', color: 'bg-green-500' },
-    { label: 'Processing', value: documents.filter(d => d.status === 'processing').length, icon: '⚙️', color: 'bg-yellow-500' },
-    { label: 'AI Status', value: aiStatus?.status === 'ok' ? 'Online' : 'Offline', icon: '🤖', color: aiStatus?.status === 'ok' ? 'bg-green-500' : 'bg-red-500' },
+    { label: 'Total Documents', value: documents.length, icon: FileText, color: 'bg-brand-50 text-brand-600' },
+    { label: 'Analyzed', value: documents.filter(d => d.status === 'analyzed').length, icon: CheckCircle2, color: 'bg-emerald-50 text-emerald-600' },
+    { label: 'Processing', value: documents.filter(d => d.status === 'processing').length, icon: Cog, color: 'bg-amber-50 text-amber-600' },
+    { label: 'AI Status', value: aiStatus?.status === 'ok' ? 'Online' : 'Offline', icon: Bot, color: aiStatus?.status === 'ok' ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600' },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <span className="font-bold text-lg">ProposalPilot AI</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link href="/upload" className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 text-sm">
-            + Upload RFP
-          </Link>
-          <button onClick={handleLogout} className="text-blue-200 hover:text-white text-sm">
-            Logout
-          </button>
+    <div className="min-h-screen bg-slate-50">
+      <nav className="app-nav">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xs">PP</span>
+            </div>
+            <span className="font-semibold text-slate-900">ProposalPilot AI</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link href="/upload" className="btn-primary text-sm">
+              <Plus className="w-4 h-4" /> Upload RFP
+            </Link>
+            <Link href="/settings" className="p-2.5 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition">
+              <SettingsIcon className="w-4 h-4" />
+            </Link>
+            <button onClick={handleLogout} className="p-2.5 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition">
+              <LogOut className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </nav>
 
-      <div className="container mx-auto px-6 py-8">
-        {/* AI Status Banner */}
+      <div className="max-w-6xl mx-auto px-6 py-8">
         {aiStatus?.status === 'error' && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-            <p className="text-red-700 font-medium">⚠️ AI Service Offline</p>
-            <p className="text-red-600 text-sm mt-1">
-              Make sure Ollama is running: <code className="bg-red-100 px-1 rounded">ollama pull qwen2.5:7b-instruct</code>
-            </p>
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 flex gap-3">
+            <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+            <div>
+              <p className="text-red-700 font-medium text-sm">AI Service Offline</p>
+              <p className="text-red-600 text-sm mt-1">
+                Make sure Ollama is running: <code className="bg-red-100 px-1.5 py-0.5 rounded text-xs">ollama pull qwen2.5:7b-instruct</code>
+              </p>
+            </div>
           </div>
         )}
 
-        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {stats.map((stat, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-6">
-              <div className={`w-10 h-10 ${stat.color} rounded-lg flex items-center justify-center text-white text-xl mb-3`}>
-                {stat.icon}
+          {stats.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <div key={i} className="card p-6">
+                <div className={`w-10 h-10 ${stat.color} rounded-lg flex items-center justify-center mb-3`}>
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
+                <div className="text-slate-500 text-sm">{stat.label}</div>
               </div>
-              <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-              <div className="text-gray-500 text-sm">{stat.label}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Recent Documents */}
-        <div className="bg-white rounded-xl shadow-sm">
-          <div className="px-6 py-4 border-b flex justify-between items-center">
-            <h2 className="text-lg font-semibold text-gray-900">Recent Documents</h2>
-            <Link href="/upload" className="text-blue-600 hover:underline text-sm">Upload New →</Link>
+        <div className="card">
+          <div className="px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+            <h2 className="text-lg font-semibold text-slate-900">Recent Documents</h2>
+            <Link href="/upload" className="text-brand-600 hover:text-brand-700 text-sm font-medium inline-flex items-center gap-1">
+              Upload New <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
           <div className="p-6">
             {loading ? (
-              <p className="text-gray-500 text-center py-8">Loading...</p>
+              <p className="text-slate-500 text-center py-8">Loading...</p>
             ) : documents.length === 0 ? (
               <div className="text-center py-12">
-                <div className="text-5xl mb-4">📄</div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No documents yet</h3>
-                <p className="text-gray-500 mb-4">Upload your first RFP to get started</p>
-                <Link href="/upload" className="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">
+                <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <FileText className="w-6 h-6 text-slate-400" />
+                </div>
+                <h3 className="text-base font-medium text-slate-900 mb-1">No documents yet</h3>
+                <p className="text-slate-500 text-sm mb-5">Upload your first RFP to get started</p>
+                <Link href="/upload" className="btn-primary text-sm inline-flex">
                   Upload RFP
                 </Link>
               </div>
             ) : (
               <div className="space-y-3">
                 {documents.map((doc) => (
-                  <div key={doc.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                  <div key={doc.id} className="flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:border-slate-300 hover:bg-slate-50 transition">
                     <div>
-                      <p className="font-medium text-gray-900">{doc.filename}</p>
-                      <p className="text-gray-500 text-sm">{new Date(doc.created_at).toLocaleDateString()}</p>
+                      <p className="font-medium text-slate-900">{doc.filename}</p>
+                      <p className="text-slate-500 text-sm">{new Date(doc.created_at).toLocaleDateString()}</p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        doc.status === 'analyzed' ? 'bg-green-100 text-green-700' :
-                        doc.status === 'processing' ? 'bg-yellow-100 text-yellow-700' :
-                        'bg-gray-100 text-gray-700'
+                      <span className={`badge ${
+                        doc.status === 'analyzed' ? 'bg-emerald-100 text-emerald-700' :
+                        doc.status === 'processing' ? 'bg-amber-100 text-amber-700' :
+                        'bg-slate-100 text-slate-700'
                       }`}>
                         {doc.status}
                       </span>
-                      <Link href={`/analysis?docId=${doc.id}`} className="text-blue-600 hover:underline text-sm">
-                        Analyze →
+                      <Link href={`/analysis?docId=${doc.id}`} className="text-brand-600 hover:text-brand-700 text-sm font-medium">
+                        Analyze &rarr;
                       </Link>
                     </div>
                   </div>
