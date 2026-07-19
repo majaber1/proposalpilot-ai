@@ -85,7 +85,7 @@ export default function DashboardPage() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-6">
+            <div key={i} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className={`w-10 h-10 ${stat.color} rounded-lg flex items-center justify-center text-white text-xl mb-3`}>
                 {stat.icon}
               </div>
@@ -96,7 +96,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Recent Documents */}
-        <div className="bg-white rounded-xl shadow-sm">
+        <div className="bg-white rounded-xl shadow-md">
           <div className="px-6 py-4 border-b flex justify-between items-center">
             <h2 className="text-lg font-semibold text-gray-900">Recent Documents</h2>
             <Link href="/upload" className="text-blue-600 hover:underline text-sm">Upload New →</Link>
